@@ -1,372 +1,273 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Noto+Sans|Playfair+Display|Raleway&display=swap" rel="stylesheet">
-    <!--
-        font-family: 'Raleway', sans-serif;
-        font-family: 'Montserrat', sans-serif;
-        font-family: 'Noto Sans', sans-serif;
-        font-family: 'Noto Serif', serif;
-    -->
-    <style>
-        .heads {
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 1.9em;
-            margin-bottom: 0.25em;
-            color: #468ad1;
-        }
-        .headsb {
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 1.9em;
-            margin-bottom: 0.25em;
-            color: #444;
-        }
-
-        .tools {
-            text-align: center;
-            font-family: 'Noto Sans', sans-serif;
-			line-height: 0.7;
-        }
-
-        .body {
-            font-family: 'Noto Sans', sans-serif;
-        }
-
-        .wrapper {
-            display: grid;
-            grid-template-columns: 68% 32%;
-
-        }
-
-        .blurb {
-            font-size: 1.1em;
-            font-family: 'Noto Sans', sans-serif;
-        }
-
-        .work {
-            display: grid;
-            grid-template-columns: 30% 70%;
-            font-size: 1.1em;
-            font-family: 'Noto Sans', sans-serif;
-			line-height: 1.2;
-        }
-
-        .edu {
-            display: grid;
-            grid-template-columns: 50% 50%;
-            font-size: 1.1em;
-            font-family: 'Noto Sans', sans-serif;
-        }
-
-        .contact {
-            text-align: center;
-            font-size: 0.9em;
-            font-family: 'Noto Sans', sans-serif;
-        }
-
-        .contact a {
-            color: #444;
-            text-decoration: none;
-        }
-
-        .play {
-            width: 70%;
-            margin: auto;
-            display: block;
-            padding: 0 2em;
-        }
-
-        .pglike {
-            width: 50em;
-            margin: 0%;
-        }
-
-        .black {
-            background-color: #cce6ff;
-            color: #444;
-            padding: 0.5em;
-            box-shadow: 0 2px 2px 0 #4499dd;
-        }
-
-        .white {
-            background-color: #ffffff;
-            color: #444;
-            padding: 0em 1.5em;
-        }
-
-        .progress-bar {
-            background-color: #555;
-            height: 15px;
-            padding: 3px;
-            width: 80%;
-            margin: auto;
-            border-radius: 5px;
-            box-shadow: 0 1px 5px #444 inset, 0 1px 0 #444;
-        }
-
-        .progress-bar span {
-            background-color: #468ad1;
-            display: inline-block;
-            height: 100%;
-            border-radius: 3px;
-            box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
-            transition: width .4s ease-in-out;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giridhar Vitta Bukka - CV</title>
+  <style>
+    :root {
+      --accent: #1f5f99;
+      --text: #1d2733;
+      --muted: #5c6875;
+      --line: #cfd8e3;
+      --light: #f4f7fb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9.6px;
+      line-height: 1.22;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 10mm 12mm;
+      background: #fff;
+    }
+    header {
+      border-bottom: 1.6px solid var(--accent);
+      padding-bottom: 5px;
+      margin-bottom: 7px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 23px;
+      line-height: 1.05;
+      letter-spacing: .2px;
+      color: var(--accent);
+    }
+    .subtitle {
+      margin-top: 2px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .contact {
+      margin-top: 4px;
+      font-size: 9px;
+      color: var(--muted);
+    }
+    .contact a, a { color: var(--accent); text-decoration: none; }
+    .grid {
+      display: grid;
+      grid-template-columns: 2.25fr .9fr;
+      column-gap: 11px;
+      align-items: start;
+    }
+    h2 {
+      margin: 7px 0 3px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 10.4px;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+    }
+    h3 {
+      margin: 0;
+      font-size: 9.9px;
+      line-height: 1.15;
+    }
+    .role {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      column-gap: 7px;
+      margin-bottom: 5px;
+      break-inside: avoid;
+    }
+    .date {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 8.8px;
+    }
+    .org { color: var(--muted); font-size: 8.9px; margin-top: 1px; }
+    ul { margin: 2px 0 0 12px; padding: 0; }
+    li { margin: 1px 0; }
+    .compact li { margin: .6px 0; }
+    .pillbox { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 3px; }
+    .pill {
+      border: 1px solid var(--line);
+      background: var(--light);
+      padding: 2px 4px;
+      border-radius: 8px;
+      font-size: 8.6px;
+      white-space: nowrap;
+    }
+    .sidebar h2 { margin-top: 7px; }
+    .sidebar .block {
+      border-left: 2px solid var(--line);
+      padding-left: 7px;
+      margin-bottom: 6px;
+    }
+    .sidebar p { margin: 2px 0; }
+    .paper { margin-bottom: 3px; }
+    .paper-title { font-weight: 700; }
+    .tags { color: var(--muted); font-size: 8.6px; }
+    .edurow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .small { font-size: 8.7px; color: var(--muted); }
+    .fit {
+      background: var(--light);
+      border: 1px solid var(--line);
+      padding: 5px 6px;
+      border-radius: 4px;
+    }
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { width: 210mm; min-height: 297mm; padding: 10mm 12mm; }
+      a { color: var(--accent); }
+    }
+  </style>
 </head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Giridhar Vitta Bukka</h1>
+      <div class="subtitle">Research Associate & PhD Candidate | UAV Perception | Sensor Resource Management | Cognitive Robotics</div>
+      <div class="contact">
+        +49 1575 9359581 | <a href="mailto:giridhar6937@gmail.com">giridhar6937@gmail.com</a> | <a href="https://www.linkedin.com/in/giridhar-vitta-bukka-a54a17aa/">LinkedIn</a> | <a href="https://github.com/Robotgir">GitHub</a>
+      </div>
+    </header>
 
-<body class="pglike">
-    <div class="wrapper">
-        <div class="white">
-            <!--<br><br>-->
-			<!--
-            <p class="blurb">A developer grown on the path less traveled. It traverses garage sized
-                startups,
-                cryptocurrency markets and grassroots education movements. <p>
-				-->
-            <p class="blurb">Motivated PhD researcher in UAV perception and sensor resource management, seeking to advance robust decision-making for cognitive robotic systems that integrate AI-based perception, human input, and embodied autonomy.
-				
-				<!--Seeking an opportunity to leverage the knowledge
-and experience gained to date in Autonomous mobile, aerial robotics navigation, Computer Vision and IoT based
-projects. -->
-                <!-- Seeking challenging part-time roles in
-                Nordrhein-Westfalen. -->
-            </p>
+    <section class="grid">
+      <div class="main">
+        <h2>Profile</h2>
+        <div>PhD researcher focused on UAV 3D perception, scene understanding, sensor fusion, and robust decision-making with human and onboard perception inputs.</div>
 
-            <h2 class="heads">&nbsp&nbsp&nbsp&nbspwork</h2>
-			<div class="work">
-                <div> 
-				    <h5>Freelancer</h5>
-					<h5>Robotics Engineer</h5>
-                    <!--<h5>jan '19 - feb '20</h5>-->
-                </div>
-                <div>
-                    <ul>
-						<li>Jan'22 - present</li>
-						<!--<li>Recipient of NRW GRÜNDERSTIPENDIUM/FOUNDER GRANT. This grant made it possible for me to take time to work on projects of my Interest in the field of Robotics and potential Business oppurtunities.</li>-->
-						<li>Offering Freelance work in projects based on Mobile - Aerial - Robotics - Prototyping - ROS - Computer Vision - C++ - Python - 3D CAD</li>
-						<li>Completed Freelance short term projects</li>
-						<!--<li>Interactions with Customers and potential Investors, Budgeting, writing Business plans and proposals </li>-->
-						<!--<li>Project 1: Consumer Products 3D CAD design and maintenance for ISIS IC GmbH for project duration of past 5 months. </li>-->
-						<li>Project 1: ROS - Gazebo based simulation of UAV conducting Autonomous visual inspection of the Wind Turbine blade, RTABMapping based navigation.</li>
-						<li>Project 2: Created URDF model for a client which is a startup in aerial robotics industry.</li>
-						<li>Project 3: Prototyping of Advanced Driver Assistance system that aids in reverse parking of articulated trucks.</li>
-						<li>Currently working on Google's Mediapipe based Pose detection module for a client in Fitness Industry</li>
-						
-						<!--
-                        <li>nov '19 - now - "Controller development for Tether-system of a Drone"   </li>
-                        <li>apr '19 - jul '19 - "Flying Microscope system (FMS) design and implementation" </li>
-                        <li>jan '19 - apr '19 - "Remotely accessible Spore - Collector  prototype for FMS" </li>
-						-->
-                    </ul>
-                </div>
-            </div>
-			<div class="work">
-                <div> 
-				    <h5>Robotics Research Project Co-ordinator at ISIS IC GmbH</h5>
-                    <!--<h5>jan '19 - feb '20</h5>-->
-                </div>
-                <div>
-                    <ul>
-						<li>jan'20 - dec'21 PartTime </li>
-						<li>Jan'21 - Jan'22 FullTime </li>
-						<li>We aimed to bring Robotic technology close to Industrial operators to improve their efficieny and safety.</li>
-						<li>Lead a team of 8 Interns for a period of 7 months in various diciplines like Market research, Prototyping, electoronics, ROS and Computer Vision.</li>
-						<!--<li>Tethered and untethered drone system for Inspection and maintenance purposes.</li>-->
-						<li>Implemented SLAM technique called RTABMapping based aerial navigation</li>
-						<li>ROS-Gazebo framework for algorithm testing and simulation</li>
-						<li>Worked with popular Libraries like Dronekit-python-SITL-Ardupilot-PX4-OPENCV-OPENSFM</li>
-						<li>Acquired presentation, public speaking and multitasking skills</li>
-						<!--
-                        <li>nov '19 - now - "Controller development for Tether-system of a Drone"   </li>
-                        <li>apr '19 - jul '19 - "Flying Microscope system (FMS) design and implementation" </li>
-                        <li>jan '19 - apr '19 - "Remotely accessible Spore - Collector  prototype for FMS" </li>
-						-->
-                    </ul>
-                </div>
-            </div>
-			<div class="work">
-                <div> 
-				    <h5>Master Thesis</h5>
-                    <h3>HAN Automotive Arnhem  </h3>
-                    <!--<h5>jan '19 - feb '20</h5>-->
-                </div>
-                <div>
-                    <ul>
-						<li>jun '20 - nov '20</li>
-						<li>Path planning algorithm based on CL-RRT for Articulated vehicle's (Trucks with trailers) driver assistance. Worked with Steering and path following controllers</li>
-						<li>Path planning implementation on StreetDrone with ROS framework</li>
-						<li>SIMULINK-STATEFLOW-MATLAB</li>
-						<!--
-                        <li>nov '19 - now - "Controller development for Tether-system of a Drone"   </li>
-                        <li>apr '19 - jul '19 - "Flying Microscope system (FMS) design and implementation" </li>
-                        <li>jan '19 - apr '19 - "Remotely accessible Spore - Collector  prototype for FMS" </li>
-						-->
-                    </ul>
-                </div>
-            </div>
-            <div class="work">
-                <div> 
-				    
-					<h5>Work Student </h5>
-                    <h3>SPECTORS project: ISIS IC GmbH  </h3>
-                    <!--<h5>jan '19 - feb '20</h5>-->
-                </div>
-                <div>
-                    <ul>
-						<li>jan '19 - jan '20 an Interreg V-A project</li>
-						<li>R&D activities aiming at tapping UAV's remote sensing capabilities</li>
-						<li>Accesing sensor data from remote node for visualization purposes using Grafana and Grafana Cloud an Open source analytics and monitoring solution.</li>
-						<li>Bi-directional Data transmission from client node on drone to server node on ground station while data processing at server node.</li>
-						<!--
-                        <li>nov '19 - now - "Controller development for Tether-system of a Drone"   </li>
-                        <li>apr '19 - jul '19 - "Flying Microscope system (FMS) design and implementation" </li>
-                        <li>jan '19 - apr '19 - "Remotely accessible Spore - Collector  prototype for FMS" </li>
-						-->
-                    </ul>
-                </div>
-            </div>
-            <div class="work">
-                <div>
-                    <H3>HSRW Applied Research Project </H3>
-                    
-                </div>
-                <div>
-                    <ul>
-                        <li>aug '19 - nov '19</li> 
-						<li>Physical prototype of the Mobile Robot with Skid-Steer
-type mechanism is designed, manufatured and assembled, a Dynamic control strategy based on Backstepping Technique for Low-Level control is implemented considering the Dynamic model of the Skid-Steer Mobile Robot
-to address pose regulation and trajectory tracking problem. </li>
-						<!--<li>nov '19 - now - optimizing MATLAB code and its implementation on real prototype </li>-->
-                    </ul>
-                </div>
-            </div>
-
-            <h2 class="heads">&nbsp&nbsp&nbsp&nbspeducation</h2>
-            <div class="edu">
-                <div>
-                    <h3>Mechanical Engineering M.Sc - 2.1 German GPA</h3>
-					<h5 >Hochschule Rhein-Waal, Kleve<h5>
-					<!--
-					<p>Focus in Mobile robotics, Multibody Dynamics and control system design  </p>
-					-->
-                </div>
-                <div>
-                    <h3>Mechanical Engineering B.Tech - 2.3 German GPA</h3>
-					<h5 >GRIET JNTU, Hyderabad<h5>
-                </div>
-            </div>
-            <br><br>
+        <h2>Current Research Experience</h2>
+        <div class="role">
+          <div class="date">2023 - Present</div>
+          <div>
+            <h3>Research Associate & PhD Candidate</h3>
+            <div class="org">Universit&auml;t der Bundeswehr M&uuml;nchen, Institute of Flight Systems / Professorship for Aviation Technology &bull; Supervisor: Prof. Peter St&uuml;tz</div>
+            <ul class="compact">
+              <li>Research: sensor resource management for UAV-based 3D perception and scene understanding.</li>
+              <li>Applications: cargo delivery, landing/delivery-zone assessment, and human-UAV collaboration.</li>
+              <li>Decision-making with multi-source inputs: camera, LiDAR, fusion modules, and human gesture-based interaction.</li>
+              <li>Work topics: mapping, localization, pose estimation, monocular depth estimation, semantic scene completion, and UAV system integration.</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="black">
-                <br><br><br>
-			<img id="img1" src="circ.png" class="play">
-            <div style="padding: 0 1em;text-align: center;">
-                <h2 class="headsb" style="">Giridhar<br>Vitta Bukka</h2>
+        <h2>Selected Publications</h2>
+        <div class="paper">
+          <span class="paper-title">Benchmarking Landing &amp; Delivery Zone Detection Algorithms: Insights on Open Evaluation Framework.</span>
+          <span class="tags">G. V. Bukka, P. St&uuml;tz, DASC 2025.</span>
+          <a href="https://doi.org/10.1109/DASC66011.2025.11257226">DOI</a> | <a href="https://ieeexplore.ieee.org/document/11257226">IEEE</a>
+        </div>
+        <div class="paper">
+          <span class="paper-title">Evaluating Point-Cloud Based Safe Landing Zone Detection Algorithms for VTOL-UAV: An Overview.</span>
+          <span class="tags">G. V. Bukka, P. St&uuml;tz, DASC 2024.</span>
+          <a href="https://doi.org/10.1109/DASC62030.2024.10748713">DOI</a> | <a href="https://ieeexplore.ieee.org/document/10748713">IEEE</a>
+        </div>
+        <div class="paper">
+          <span class="paper-title">Exploring Multi-Attribute Decision Making for Collaborative First-Aid Drone Deliveries.</span>
+          <span class="tags">M. Brenner, G. Vitta-Bukka, P. St&uuml;tz, MESAS / LNCS.</span>
+          <a href="https://doi.org/10.1007/978-3-031-99732-7_13">DOI</a> | <a href="https://link.springer.com/chapter/10.1007/978-3-031-99732-7_13">Springer</a>
+        </div>
 
-                <div class="contact">
-                    <h4>+49 1575 9359581<br>
-                        <a href="mailto:robotgir6937@gmail.com" target="_top">robotgir6937@gmail.com</a>
-                        
-                        <br>
-                        <br>
-                        <a href="https://www.linkedin.com/in/giridhar-vitta-bukka-a54a17aa/">
-                            <i class="fab fa-linkedin-in"></i>&nbsp&nbsp&nbsp/in/giridhar vitta bukka
-                        </a><br>
-						<a href="https://github.com/expx3">
-                            <i class="fab fa-github-alt"></i>&nbsp&nbsp&nbspexpx3
-                        </a>
-                    </h4>
-                </div>
-            </div>
-			<br><br>
-			<br><br>
-			<br><br>
-            <div class="tools">
-                <h2 class="headsb">skills</h2>
-            </div>
-            
-            
-            <div class="tools">
-			    <b style="line-height: 1em;">Rapid prototyping </b>
-            	
-                <p style="line-height: 1em;"> Research and Development :</p> 
-				<p style="line-height: 1em;"> MATLAB - SIMULINK </p>
-				<p style="line-height: 1em;"> python - C++</p>
-				<p style="line-height: 1em;">Opencv - ROS </p>
-				<p style="line-height: 1em;">Tkinter</p>
-				<p style="line-height: 1em;">Hardware : </p>
-				<p style="line-height: 1em;">Eagle - Fusion 360</p>
-				<!--
-				<p style="line-height: 1em;">Embedded C++</p>
-				<p style="line-height: 1em;">Embedded Linux</p>
-				-->
-				
-            </div>
-			<!--
-			<div class="tools">
-			    <b style="line-height: 1em;">Robotic Software Framework</b>
-            	
-                <p style="line-height: 1em;">ROS </p>
-				
-            </div>
-			
-			<div class="tools">
-			    <b style="line-height: 1em;">GUI</b>
-            	
-                <p style="line-height: 1em;">Tkinter </p>
-				
-            </div>
-			-->
-             <br><br>
-			 <br><br>
-			 <br><br>
-			 <br><br>
-			 <br><br>
-			 <br><br>
+        <h2>Relevant Experience</h2>
+        <div class="role">
+          <div class="date">Aug 2022 - Apr 2023</div>
+          <div>
+            <h3>Robotics Engineer, Freelancer / Stogl Robotics Consulting UG</h3>
+            <ul class="compact">
+              <li>Autonomous agrobot navigation: MoveIt configuration, AMCL localization, RGB-D sensing, depthimage_to_laserscan, and costmaps.</li>
+              <li>ROS2 / MoveIt support for custom KUKA robotic cell; planning-scene services, trajectory handling, velocity limiting, and Docker workflows.</li>
+              <li>Open-source ROS2 contributions: kuka_experimental, ros2_control, simulator support, mecanum/ackermann controllers, and tests.</li>
+            </ul>
+          </div>
+        </div>
 
-            <br>
-            <div class="tools">
-                <h2 class="headsb">interests</h2>
-				<p style="line-height: 1em;"> Computer Vision </p>
-				
-                <p style="line-height: 1em;">Navigation - Perception</p>
+        <div class="role">
+          <div class="date">Jan 2022 - Jul 2022</div>
+          <div>
+            <h3>Robotics Engineer, Freelancer</h3>
+            <ul class="compact">
+              <li>ROS-Gazebo UAV simulation for autonomous wind-turbine blade inspection using RTAB-Map-based navigation.</li>
+              <li>URDF and ros2_control debugging; driver-assistance prototype for articulated trucks; MediaPipe pose-detection demo app.</li>
+            </ul>
+          </div>
+        </div>
 
-                <p style="line-height: 1em;">Autonomous Mobile Robots</p>
-				
-				<p style="line-height: 1em;">Autonomous Aerial Robots</p>
-				
-				<p style="line-height: 1em;">Rapid - prototyping </p>
-				
-			
+        <div class="role">
+          <div class="date">Jan 2020 - Jan 2022</div>
+          <div>
+            <h3>Robotics Research Project Coordinator, SPECTORS / ISIS IC GmbH</h3>
+            <ul class="compact">
+              <li>UAV remote-sensing and aerial navigation R&amp;D; RTAB-Map, ROS-Gazebo, DroneKit, SITL, ArduPilot, PX4, OpenCV, and OpenSfM.</li>
+              <li>Led 8 interns across prototyping, electronics, ROS, and computer vision; supported demonstrations and technical coordination.</li>
+            </ul>
+          </div>
+        </div>
 
-			</div>
-			<br><br>
-            <br><br>
-			<br><br>
-			<div class="tools">
-                <h2 class="headsb">languages</h2>
-				<p style="line-height: 1em;"> English -C2 </p>
-				
-                <p style="line-height: 1em;">German - B2</p>
+        <div class="role">
+          <div class="date">2019 - 2020</div>
+          <div>
+            <h3>Work Student, SPECTORS Project / ISIS IC GmbH</h3>
+            <ul class="compact">
+              <li>UAV remote-sensing data access, Grafana-based visualization, and bidirectional communication between drone client node and ground server.</li>
+            </ul>
+          </div>
+        </div>
 
-                <p style="line-height: 1em;">Hindi - B2</p>
-				
-				<p style="line-height: 1em;">Telugu - Native</p>
-				
-			
-            <br><br>
-            <br><br>
-			</div>
+        <div class="role">
+          <div class="date">Jun 2020 - Nov 2020</div>
+          <div>
+            <h3>Master Thesis, HAN Automotive Arnhem</h3>
+            <ul class="compact">
+              <li>CL-RRT path planning and steering/path-following control for articulated vehicle driver assistance; ROS, MATLAB, Simulink, Stateflow.</li>
+            </ul>
+          </div>
+        </div>
 
-    </div>
+        <h2>Education</h2>
+        <div class="edurow">
+          <div><strong>M.Sc. Mechanical Engineering</strong><br><span class="small">Hochschule Rhein-Waal, Kleve &bull; German GPA: 2.1</span></div>
+          <div><strong>B.Tech. Mechanical Engineering</strong><br><span class="small">GRIET JNTU, Hyderabad &bull; German GPA: 2.3</span></div>
+        </div>
+      </div>
 
+      <aside class="sidebar">
+        <h2>Summer School Fit</h2>
+        <div class="fit">Interest in decision-making for cognitive robots where AI perception, human input, and real-world UAV autonomy interact under uncertainty.</div>
 
-    <div></div>
-    </div>
+        <h2>Core Skills</h2>
+        <div class="pillbox">
+          <span class="pill">UAV Systems</span><span class="pill">ROS2</span><span class="pill">ROS</span><span class="pill">Gazebo</span><span class="pill">RTAB-Map</span><span class="pill">SLAM</span><span class="pill">Navigation</span><span class="pill">Motion Planning</span><span class="pill">Sensor Fusion</span><span class="pill">3D Perception</span><span class="pill">Scene Understanding</span><span class="pill">Computer Vision</span><span class="pill">OpenCV</span><span class="pill">Pose Estimation</span><span class="pill">Monocular Depth</span><span class="pill">Semantic Scene Completion</span>
+        </div>
+
+        <h2>Programming & Tools</h2>
+        <div class="block">
+          <p><strong>Languages:</strong> Python, C++, MATLAB</p>
+          <p><strong>Robotics:</strong> ROS2, ros2_control, MoveIt, Docker, URDF</p>
+          <p><strong>UAV:</strong> PX4, ArduPilot, DroneKit, SITL</p>
+          <p><strong>Simulation:</strong> Gazebo, AirSim, Simulink, Stateflow</p>
+          <p><strong>Hardware/CAD:</strong> Eagle, Fusion 360, rapid prototyping</p>
+        </div>
+
+        <h2>Research Interests</h2>
+        <div class="block">
+          <p>Sensor resource management</p>
+          <p>Decision-making under uncertainty</p>
+          <p>Human-UAV collaboration</p>
+          <p>Landing/delivery-zone assessment</p>
+          <p>Active perception and sensor fusion</p>
+          <p>Cognitive robotics</p>
+        </div>
+
+        <h2>Languages</h2>
+        <div class="block">
+          <p>English - C2</p>
+          <p>German - B2</p>
+          <p>Hindi - B2</p>
+          <p>Telugu - Native</p>
+        </div>
+      </aside>
+    </section>
+  </main>
 </body>
-
 </html>
